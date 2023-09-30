@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "ad987e09-b0f8-4fb6-ac8e-7dde1418b40b",
+		"name": "TempConvert SOAP API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TempConvert - C to F",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\r\n  <soap12:Body>\r\n    <CelsiusToFahrenheit xmlns=\"https://www.w3schools.com/xml/\">\r\n      <Celsius>50</Celsius>\r\n    </CelsiusToFahrenheit>\r\n  </soap12:Body>\r\n</soap12:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.w3schools.com/Xml/tempconvert.asmx",
+					"protocol": "https",
+					"host": [
+						"www",
+						"w3schools",
+						"com"
+					],
+					"path": [
+						"Xml",
+						"tempconvert.asmx"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TempConvert - F to C",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\r\n  <soap12:Body>\r\n    <FahrenheitToCelsius xmlns=\"https://www.w3schools.com/xml/\">\r\n      <Fahrenheit>150</Fahrenheit>\r\n    </FahrenheitToCelsius>\r\n  </soap12:Body>\r\n</soap12:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.w3schools.com/Xml/tempconvert.asmx",
+					"protocol": "https",
+					"host": [
+						"www",
+						"w3schools",
+						"com"
+					],
+					"path": [
+						"Xml",
+						"tempconvert.asmx"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
